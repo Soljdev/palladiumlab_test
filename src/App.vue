@@ -1,15 +1,22 @@
+<!-- @format -->
+
 <template>
-  <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-    <div class="max-w-5xl mx-auto my-6">
+  <div class="wrapper">
+    <topHeader />
+
+    <div class="">
       <router-view />
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+  import { defineComponent } from 'vue';
+  import topHeader from './components/topHeader.vue';
 
-export default defineComponent({
-  components: {},
-})
+  export default defineComponent({
+    components: {
+      topHeader,
+    },
+  });
 </script>
