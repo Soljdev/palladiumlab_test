@@ -2,7 +2,11 @@
 
 <template>
   <div class="header">
-    <div class="map">
+    <!-- map -->
+    <a 
+      href="#" 
+      class="map"
+    >
       <svg
         width="15"
         height="18"
@@ -23,15 +27,27 @@
           fill="#222222"
         />
       </svg>
-    </div>
+    </a>
+    <!-- Nav 1 -->
     <div class="nav-list">
-      <div class="nav-item" v-for="(item, index) in this.nav.one">
-        <a class="" :href="item.url" :class="{ '--current': index == 0 }">
+      <div 
+        v-for="(item, index) in nav.one"
+        :key="index" 
+        class="nav-item" 
+      >
+        <a 
+          :href="item.url" 
+          :class="{ '--current': index == 0 }"
+        >
           <span>{{ item.name }}</span>
         </a>
       </div>
     </div>
-    <div class="logo">
+    <!-- Logo -->
+    <a 
+      href="/" 
+      class="logo"
+    >
       <svg
         width="30"
         height="31"
@@ -46,23 +62,35 @@
           fill="#222222"
         />
       </svg>
-    </div>
+    </a>
+    <!-- Nav 2 -->
     <div class="nav-list">
-      <div class="nav-item" v-for="item in this.nav.two">
-        <a class="" :href="item.url">
+      <div 
+        v-for="(item, index) in nav.two" 
+        :key="index" 
+        class="nav-item"
+      >
+        <a :href="item.url">
           <span>{{ item.name }}</span>
         </a>
       </div>
     </div>
-    <!-- <div>logo</div> -->
-    <!-- <div class="grow">nav</div> -->
-    <div class="phone">phone</div>
+    <!-- phone -->
+    <a 
+      href="" 
+      class="phone"
+    >
+      <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M13.9711 0.0389886C13.2495 -0.126998 12.5202 0.250129 12.2292 0.920535L12.2279 0.923517L10.6794 4.53387C10.4123 5.15691 10.589 5.88378 11.1182 6.31271L12.605 7.53089C11.5779 9.44779 9.98201 11.06 8.03224 12.103L6.81202 10.6144C6.38278 10.0907 5.66154 9.90894 5.03467 10.1775L1.42713 11.7223L1.42081 11.7251C0.752455 12.0186 0.37211 12.7489 0.539244 13.4702L1.31175 16.8214C1.47107 17.5095 2.08354 18.0002 2.79564 18.0002C11.4612 18.0002 18.4982 10.9796 18.5 2.30201C18.5049 1.58874 18.0162 0.973905 17.3229 0.814566L13.9711 0.0389886ZM13.6052 1.51777L12.0581 5.12485L14.4714 7.12098L14.2233 7.64964C12.9892 10.2787 10.8358 12.4629 8.15037 13.7212L7.62201 13.9687L5.62545 11.5562L2.02273 13.099C2.01354 13.1034 2.00715 13.11 2.00325 13.1176C1.99923 13.1255 2.00037 13.131 2.00037 13.131L2.00064 13.1321L2.77309 16.4831C2.77544 16.493 2.78366 16.5002 2.79564 16.5002C10.635 16.5002 17 10.1483 17 2.29866V2.29196C17.0001 2.28769 16.9992 2.28464 16.9992 2.28464L16.9976 2.28176L16.9949 2.27939C16.9949 2.27939 16.9919 2.2776 16.9876 2.27662L16.9862 2.27629L13.6348 1.50081C13.6315 1.50008 13.6272 1.50031 13.6272 1.50031C13.625 1.5006 13.6221 1.50138 13.619 1.50296C13.6129 1.50607 13.6081 1.51126 13.6052 1.51777Z" fill="#222222"/>
+      </svg>
+    </a>
+    <!--  -->
   </div>
 </template>
 
 <script lang="ts">
-  import { defineComponent, toRef, ref } from 'vue';
-  import { globalState } from '../store';
+  import { defineComponent, toRef, ref } from 'vue'
+  import { globalState } from '../store'
 
   export default defineComponent({
     props: {},
@@ -74,25 +102,22 @@
           two: [],
         },
         navs: toRef(globalState, 'navs'),
-      };
+      }
     },
     computed: {
       partNav() {
-        return Math.round(this.navs.length / 2);
+        return Math.round(this.navs.length / 2)
       },
-      // index() {
-      //   return this.navs.indexOf(this.navs.slice(3, 6).shift());
-      // },
     },
     methods: {
       reorderNavs() {
-        let middlePoint = Math.round(this.navs.length / 2);
+        let middlePoint = Math.round(this.navs.length / 2)
 
         for (let i = 0; i < this.navs.length; i++) {
           if (i < middlePoint) {
-            this.nav.one.push(this.navs[i]);
+            this.nav.one.push(this.navs[i])
           } else {
-            this.nav.two.push(this.navs[i]);
+            this.nav.two.push(this.navs[i])
           }
         }
       },
@@ -105,27 +130,37 @@
 
 <style>
   .header {
-    min-height: 85px;
-    border-bottom: 1px solid #ebebeb;
+    --header-height: 85px;
+    min-height: var(--header-height);
+    position: absolute;
+    z-index: 100;
     @apply flex items-stretch justify-center w-full;
+    
   }
 
   .phone,
   .map {
-    width: 85px;
-    flex-basis: 85px;
-    @apply flex items-center justify-center;
+    /* width: 85px; */
+    /* flex-basis: 85px; */
+    border: 1px solid #ebebeb;
+    height: var(--header-height);
+    aspect-ratio: 1 / 1;
+    @apply flex items-center justify-center hover:bg-gray-100 transition-colors;
   }
 
   .nav-list {
     position: relative;
-    bottom: -1.5px;
-    @apply flex grow items-stretch justify-center gap-16;
+    border-bottom: 1px solid #ebebeb;
+    @apply flex grow items-stretch justify-center  gap-8 lg:gap-16;
   }
 
-  .nav-item,
+  .nav-item {
+    bottom: -1px;
+    @apply relative flex items-stretch transition-colors font-display;
+  }
+
   .nav-item a {
-    border-bottom: 1.5px solid transparent;
+    border-bottom: 1px solid transparent;
     color: #222222b2;
     font-weight: 600;
     @apply flex items-stretch transition-colors font-display;
@@ -142,6 +177,8 @@
   }
 
   .logo {
-    align-self: center;
+    /* align-self: center; */
+    border-bottom: 1px solid #ebebeb;
+    @apply flex items-center;
   }
 </style>
