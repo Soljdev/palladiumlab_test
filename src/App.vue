@@ -2,7 +2,8 @@
 
 <template>
   <div class="wrapper">
-    <topHeader />
+    <mainHeader />
+
 
     <div class="">
       <router-view />
@@ -11,12 +12,12 @@
 </template>
 
 <script lang="ts">
-  import { defineComponent } from 'vue';
-  import topHeader from './components/topHeader.vue';
+  import { defineComponent } from 'vue'
+  import mainHeader from './components/mainHeader.vue'
 
   export default defineComponent({
     components: {
-      topHeader,
+      mainHeader,
     },
-  });
+  })
 </script>
