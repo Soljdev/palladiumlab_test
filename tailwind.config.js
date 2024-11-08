@@ -9,6 +9,20 @@ module.exports = {
         display: ['Gilroy', ...defaultTheme.fontFamily.sans],
         body: ['Montserrat', ...defaultTheme.fontFamily.sans],
       },
+      fontSize: {
+        'heading-1': ['64px', {
+          lineHeight: '72px',
+          letterSpacing: '-0.01em',
+          fontWeight: '800',
+        }],
+      }, 
+      colors: {
+        'main-red': 'rgba(235, 87, 87, 1)',
+        'main-green': 'rgba(33, 150, 83, 1)',
+        'main-blue': 'rgba(47, 128, 237, 1)',
+        'main-purple': 'rgba(155, 81, 224, 1)',
+
+      },
     },
   },
   plugins: [require('@tailwindcss/typography')],
