@@ -21,9 +21,9 @@
         font: 800 14px/20px Gilroy, "Helvetica Neue", Helvetica, sans-serif;
         text-align: center;
         padding: 10px 48px;
-        border: 1px solid rgba(34, 34, 34, 0.3);
+        border: 1px solid var(--primary-color, rgba(0,0,0.3));
         cursor: pointer;
-        color: rgba(34, 34, 34, 1);
+        color: var(--primary-color, #222);
         transition: all 0.3s ease-out
     }
 
@@ -37,7 +37,7 @@
         transform: translate(-50%, -50%);
         gap: 0px;
         opacity: 0px;
-        background: rgba(34, 34, 34, 1);
+        background: var(--primary-color, #222);
         transition: 
             transform 0.25s ease-out,
             width 0.25s ease-out,
@@ -47,7 +47,7 @@
 
     .btn:hover {
         color: #fff;
-        border-color: #222
+        border-color: var(--primary-color, #222)
     }
     .btn:hover::after {
         /* left: 0; */
