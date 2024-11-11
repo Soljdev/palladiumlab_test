@@ -6,8 +6,8 @@
     <topHeader />
     <div class="main-header">
       <div class="main-header-title heading-1">
-        Ремонт <span>и</span> дизайн 
-        <br><span>в Москве и Московской области</span>
+        <div v-html="items[--currentBlockId]?.title || 'Ремонт <span>и</span> дизайн '"></div>
+        <span>в Москве и Московской области</span>
       </div>
       <div class="main-header-btn flex justify-center pb-16">
         <div class="btn">
@@ -84,7 +84,7 @@ export default defineComponent({
             this.items[item].show = false
           }
       }
-      this.currentBlockId = true
+      this.currentBlockId = id
     },
   },
 })
@@ -136,13 +136,13 @@ export default defineComponent({
   background-clip: border-box;
   cursor: pointer;
   z-index: 30;
-  @apply relative p-8 flex items-end w-full justify-center font-display text-white transition-colors
+  @apply relative p-8 flex items-end w-full justify-center font-display text-white transition-all max-h-full
 }
 
 .main-header-item.--current {
   border-color: transparent;
   z-index: 1;
-  @apply items-end h-full
+  @apply items-end h-full max-h-full
 }
 
 .main-header-item-cover {
