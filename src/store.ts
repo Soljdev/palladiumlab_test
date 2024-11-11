@@ -36,6 +36,7 @@ export const globalState = reactive({
       url: '#',
       colors: 'bg-main-red',
       show: false,
+      img: './public/img/s1.jpeg',
     },
     {
       id: 2,
@@ -44,6 +45,7 @@ export const globalState = reactive({
       url: '#',
       colors: 'bg-main-green',
       show: false,
+      img: './public/img/s2.jpeg',
     },
     {
       id: 3,
@@ -52,6 +54,7 @@ export const globalState = reactive({
       url: '#',
       colors: 'bg-main-blue',
       show: false,
+      img: './public/img/s3.jpeg',
     },
     {
       id: 4,
@@ -60,6 +63,7 @@ export const globalState = reactive({
       url: '#',
       colors: 'bg-main-purple',
       show: false,
+      img: './public/img/s4.jpeg',
     },
   ],
   navs: [
