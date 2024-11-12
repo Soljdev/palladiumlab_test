@@ -115,14 +115,14 @@
     min-height: 100vh;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1.2fr 1fr;
+    grid-template-rows: 1.7fr 1fr;
     gap: 0px;
   }
 
   .main-header {
     grid-area: 1 / 1 / 2 / 5;
     z-index: 30;
-    @apply relative py-16;
+    @apply relative py-16 lg:py-28;
   }
 
   .main-header-title {
@@ -136,7 +136,7 @@
   .main-header-inner {
     grid-area: 1 / 1 / 3 / 5;
     z-index: 10;
-    @apply relative overflow-hidden flex items-end pb-16;
+    @apply relative overflow-hidden flex items-end pb-[5.5rem];
   }
 
   .main-header-inner::after {
@@ -144,7 +144,7 @@
     z-index: -2;
     background: url(../../public/img/s1.png) no-repeat center;
     background-size: cover;
-    @apply block absolute top-[60%] bottom-0 w-full;
+    @apply block absolute top-[57%] bottom-0 w-full;
   }
 
   .main-header-item {
@@ -152,13 +152,19 @@
     background-clip: border-box;
     cursor: pointer;
     z-index: 30;
-    @apply relative p-2 md:p-4 lg:p-8 w-full max-h-full
-          flex flex-col gap-0 items-center justify-end 
+    @apply relative p-2 md:p-4 lg:p-7 w-full max-h-32
+          flex flex-col gap-0 items-center justify-end
           transition-all;
+  }
+  
+  .main-header-item.--current {
+    border-color: transparent;
+    z-index: 1;
+    @apply h-full max-h-full gap-4;
   }
 
   .main-header-item-title {
-    @apply font-display text-white text-sm sm:text-lg lg:text-[20px] text-center
+    @apply font-display text-white text-sm sm:text-lg lg:text-[20px] text-center font-[500]
   }
 
   .main-header-item-desc {
@@ -169,12 +175,6 @@
 
   .main-header-item.--current .main-header-item-desc {
     @apply max-h-full
-  }
-  
-  .main-header-item.--current {
-    border-color: transparent;
-    z-index: 1;
-    @apply h-full max-h-full gap-4;
   }
 
   .main-header-item-cover {
