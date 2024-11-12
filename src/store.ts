@@ -8,13 +8,13 @@ export const globalState = reactive({
         title: 'Офис',
         value: 'Москва, ул. Уличная, д. 1, оф. 1',
       },
-      email: {
-        title: 'E-mail',
-        value: 'company@company.ru',
-      },
       worktime: { 
         title: 'Режим работы',
         value: 'Пн-Вт: 10<sup>00</sup> - 19<sup>00</sup>; Сб-Вс: 10<sup>00</sup> - 15<sup>00</sup>',
+      },
+      email: {
+        title: 'E-mail',
+        value: 'company@company.ru',
       },
       phone: {
         title: 'Телефон',

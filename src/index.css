@@ -10,6 +10,13 @@
     @font-face {
       font-family: 'Gilroy';
       font-style: normal;
+      font-weight: 500;
+      font-display: swap;
+      src: url(../public/fonts/Gilroy/Gilroy-Semibold.woff) format('woff');
+    }
+    @font-face {
+      font-family: 'Gilroy';
+      font-style: normal;
       font-weight: 600;
       font-display: swap;
       src: url(../public/fonts/Gilroy/Gilroy-Bold.woff) format('woff');

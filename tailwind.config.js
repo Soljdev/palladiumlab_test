@@ -12,12 +12,12 @@ module.exports = {
       fontSize: {
         'heading-1': ['64px', {
           lineHeight: '72px',
-          letterSpacing: '-0.01em',
+          // letterSpacing: '-0.01em',
           fontWeight: '800',
         }],
         'heading-2': ['32px', {
           lineHeight: '40px',
-          letterSpacing: '-0.01em',
+          // letterSpacing: '-0.01em',
           fontWeight: '800',
         }],
       }, 
@@ -27,7 +27,7 @@ module.exports = {
         'main-blue': 'rgba(47, 128, 237, 1)',
         'main-purple': 'rgba(155, 81, 224, 1)',
 
-      },  
+      },
     },
   },
   plugins: [require('@tailwindcss/typography')],
