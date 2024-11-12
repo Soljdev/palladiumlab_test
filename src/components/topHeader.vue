@@ -144,7 +144,7 @@
 
 <style>
   .header {
-    --header-height: 86px;
+    /* --header-height: 86px; */
     min-height: var(--header-height);
     position: absolute;
     z-index: 100;
@@ -163,12 +163,12 @@
   .nav {
     border: 1px solid #ebebeb;
     border-top: 1px solid transparent ;
-    @apply flex grow items-stretch w-full
+    @apply flex grow items-stretch w-full justify-center
   }
 
   .nav-list {
     position: relative;
-    @apply flex grow items-stretch justify-center  gap-8 lg:gap-16;
+    @apply hidden md:flex grow items-stretch justify-center gap-8 lg:gap-16;
   }
 
   .nav-item {
