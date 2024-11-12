@@ -179,7 +179,7 @@
   .main-header-item.--current {
     border-color: transparent;
     z-index: 1;
-    @apply h-full max-h-full gap-4 order-1 md:order-2;
+    @apply h-full max-h-full gap-4 order-1 sm:order-2;
   }
 
   .main-header-item-title {
