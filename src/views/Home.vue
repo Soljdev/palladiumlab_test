@@ -1,7 +1,7 @@
 <template>
   <div>
     <mainHeader />
-    <section class="max-w-screen-lg px-4 mx-auto">
+    <section class="max-w-[1130px] px-4 mx-auto">
       <h2 class="section-header heading-2">Примеры <span>выполненных</span> работ</h2>
       <div class="section-container">
         <div class="tail-container">
@@ -23,9 +23,9 @@
       </div>
     </section>
 
-    <section class="max-w-screen-lg px-4 mx-auto">
+    <section class="max-w-[1130px] px-4 mx-auto">
       <h2 class="section-header heading-2">Связаться <span>с нами</span></h2>
-      <div class="section-container">
+      <div class="section-container flex items-start gap-6">
         <div class="contacts-container">
           <div 
             v-for="(item, index) in store.contacts" 
@@ -47,10 +47,28 @@
             </div>
           </div>
         </div>
+        <div class="max-w-[360px] grow flex flex-col gap-5">
+          <div class="contacts-title">Остались вопросы?</div>
+          <label class="input-group">
+            <div class="input-label">Ваше имя</div>
+            <input class="input-field" type="text" placeholder="Иван Иванов">
+          </label>
+          <label class="input-group">
+            <div class="input-label">Телефон / E-mail</div>
+            <input class="input-field" type="text" placeholder="example@example.com">
+          </label>
+          <label class="input-group">
+            <div class="input-label">Ваше сообщение</div>
+            <input class="input-field" type="text" placeholder="Иван Иванов">
+          </label>
+          <div class="text-[9px] text-gray-500">Нажимая на кнопку «Получить консультацию», вы соглашаетесь <a href="#" class="text-[#222]">обработку персональных данных</a></div>
+          <div>
+            <div class="btn">Получить консультацию</div>
+          </div>
+        </div>
       </div>
     </section>
   </div>
-
 </template>
 
 <script lang="ts">
@@ -74,7 +92,11 @@
 <style>
 
 .section-header {
-  @apply mt-20 mb-12
+  @apply mt-32 pt-2 mb-10 pb-1
+}
+
+.section-container {
+  
 }
 
 .tail-container {  
@@ -148,11 +170,11 @@
 
 
 .contacts-container {
-  @apply grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-y-[48px]
+  @apply grow grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-y-[50px] pt-1
 }
 
 .contacts-title {
-  @apply font-display text-sm font-[800]
+  @apply font-display text-sm font-[800] pb-2
 }
 
 .contacts-content {
@@ -175,4 +197,28 @@
 .contacts-icon.--vk {}
 .contacts-icon.--fb {}
 .contacts-icon.--in {}
+
+.input-group {}
+
+.input-label {
+  font-size: 9px;
+  font-weight: 500;
+  line-height: 12px;
+  @apply font-body
+}
+
+.input-field {
+  border: none;
+  background: none;
+  border-radius: 0;
+  height: 36px;
+  outline: none;
+  vertical-align: middle;
+  border-bottom: 1px solid rgba(235, 235, 235, 1);
+  @apply w-full transition-all
+}
+
+.input-field:focus {
+  border-bottom: 1px solid #222;
+}
 </style>
