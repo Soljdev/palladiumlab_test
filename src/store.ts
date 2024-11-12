@@ -1,7 +1,6 @@
 import { reactive } from 'vue'
 
 export const globalState = reactive({
-  count: 0,
   commons: {
     siteTitle: 'Ремонт и дизайн в Москве и Московской области',
     contacts: {
@@ -15,13 +14,16 @@ export const globalState = reactive({
       },
       worktime: { 
         title: 'Режим работы',
-        value: 'Пн-Вт: 1000 - 1900; Сб-Вс: 1000 - 1500',
+        value: 'Пн-Вт: 10<sup>00</sup> - 19<sup>00</sup>; Сб-Вс: 10<sup>00</sup> - 15<sup>00</sup>',
       },
       phone: {
         title: 'Телефон',
         value: '8 (800) 900-00-00',
       },
-      socialLinks: {
+    },
+    socialLinks: {
+      title: 'Социальные сети',
+      items:{
         vk: '#',
         tg: '#',
         fb: '#',

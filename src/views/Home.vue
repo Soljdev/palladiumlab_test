@@ -1,13 +1,13 @@
 <template>
   <div>
     <mainHeader />
-    <section class="max-w-screen-lg mx-auto">
+    <section class="max-w-screen-lg px-4 mx-auto">
       <h2 class="section-header heading-2">Примеры <span>выполненных</span> работ</h2>
       <div class="section-container">
         <div class="tail-container">
           <div 
             v-for="(tail, index) in tailNavs" 
-            class="tail-item bg-gray-300" 
+            class="tail-item" 
             v-bind:key="index"
             :class="[
               't' + index
@@ -23,10 +23,30 @@
       </div>
     </section>
 
-    <section class="max-w-screen-lg mx-auto">
+    <section class="max-w-screen-lg px-4 mx-auto">
       <h2 class="section-header heading-2">Связаться <span>с нами</span></h2>
       <div class="section-container">
-      
+        <div class="contacts-container">
+          <div 
+            v-for="(item, index) in store.contacts" 
+            class="" 
+            v-bind:key="index"
+          >
+            <div class="contacts-title">{{ item.title }}</div>
+            <div class="contacts-content" v-html="item.value"></div>
+          </div>
+          <div>
+            <div class="contacts-title">{{ store.socialLinks.title }}</div>
+            <div class="contacts-social">
+              <div 
+                v-for="(item, key) in store.socialLinks.items" 
+                v-bind:key="key"
+              >
+                <div class="contacts-icon" :class="'--'+key">{{ key }}</div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </div>
@@ -45,6 +65,7 @@
     setup() {
         return {
           tailNavs: toRef(globalState, 'tailNavs'),
+          store: toRef(globalState, 'commons'),
         }
       },
   })
@@ -125,4 +146,33 @@
   @apply block absolute z-[2] w-full h-full top-0 bottom-0 object-cover object-center
 }
 
+
+.contacts-container {
+  @apply grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-y-[48px]
+}
+
+.contacts-title {
+  @apply font-display text-sm font-[800]
+}
+
+.contacts-content {
+  @apply font-body text-[13px] font-[400]
+}
+
+.contacts-social {
+  @apply flex flex-row gap-[10px] w-full
+}
+
+.contacts-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 2px;
+  text-transform: uppercase;
+  background: rgba(34, 34, 34, 1);
+  @apply text-white text-sm flex items-center justify-center
+}
+
+.contacts-icon.--vk {}
+.contacts-icon.--fb {}
+.contacts-icon.--in {}
 </style>
