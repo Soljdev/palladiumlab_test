@@ -144,7 +144,7 @@
 
 <style>
   .header {
-    --header-height: 85px;
+    --header-height: 86px;
     min-height: var(--header-height);
     position: absolute;
     z-index: 100;

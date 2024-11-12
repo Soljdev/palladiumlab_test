@@ -2,22 +2,16 @@
 
 <template>
   <div class="wrapper">
-    <mainHeader />
-
-
-    <div class="">
-      <router-view />
-    </div>
+    <router-view />
   </div>
 </template>
 
 <script lang="ts">
   import { defineComponent } from 'vue'
-  import mainHeader from './components/mainHeader.vue'
 
   export default defineComponent({
     components: {
-      mainHeader,
+      // mainHeader,
     },
   })
 </script>
