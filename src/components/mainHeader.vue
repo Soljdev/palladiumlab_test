@@ -4,15 +4,17 @@
     :style="[currentBlockId ? { '--primary-color': '#fff' } : '']"
   >
     <topHeader />
+    <!--  -->
     <div class="main-header">
-      <div class="main-header-title heading-1">
+      <div class="main-header-title heading-3 sm:heading-2 md:heading-1">
         <div v-html="items[--currentBlockId]?.title || 'Ремонт <span>и</span> дизайн '" />
         <span>в Москве и Московской области</span>
       </div>
-      <div class="main-header-btn flex justify-center pb-16">
+      <div class="main-header-btn flex justify-center">
         <div class="btn">Оставить заявку</div>
       </div>
     </div>
+    <!--  -->
     <div class="main-header-inner">
       <div
         v-for="item in items"
@@ -55,7 +57,9 @@
           </div>
         </div>
       </div>
-
+    </div>
+    <!--  -->
+    <div class="main-header-inner-cover">
       <div
         v-for="item in items"
         :key="item.id"
@@ -114,37 +118,51 @@
     position: relative;
     min-height: 100vh;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1.7fr 1fr;
+    grid-template-columns: 1fr;
+    grid-template-rows: var(--header-height) auto 1fr;
     gap: 0px;
   }
 
+  .header { grid-area: 1 / 1 / 2 / 2; }
+
   .main-header {
-    grid-area: 1 / 1 / 2 / 5;
+    grid-area: 2 / 1 / 3 / 2;
     z-index: 30;
-    @apply relative py-16 lg:py-28;
+    @apply relative flex flex-col items-center justify-center p-4  
+  }
+
+  .main-header-inner-cover {
+    grid-area: 3 / 1 / 4 / 2;
+    content: '';
+    z-index: -2;
+    background: url(../../public/img/s1.png) no-repeat center;
+    background-size: cover;
   }
 
   .main-header-title {
     color: var(--primary-color, #222);
     z-index: 30;
-    @apply relative max-w-screen-xl text-heading-1 
-           m-auto pt-16 md:pt-20 lg:pt-[92px] pb-[42px] 
+    padding-top: var();
+    @apply relative max-w-[1160px] text-lg
+           mx-auto pb-[42px] 
            text-center;
   }
 
   .main-header-inner {
-    grid-area: 1 / 1 / 3 / 5;
+    grid-area: 2 / 1 / 4 / 2;
     z-index: 10;
-    @apply relative overflow-hidden flex items-end pb-[5.5rem];
+    @apply relative overflow-hidden pb-8 md:pb-[5.5rem] px-4 md:px-0
+            flex flex-col sm:flex-row items-end justify-end;
   }
 
-  .main-header-inner::after {
-    content: '';
-    z-index: -2;
-    background: url(../../public/img/s1.png) no-repeat center;
-    background-size: cover;
-    @apply block absolute top-[57%] bottom-0 w-full;
+  @media (screen(md)) {
+    .main-header-container {
+      grid-template-rows: var(--header-height) 1.5fr 1fr;
+    }
+
+    .main-header-inner {
+      grid-area: 1 / 1 / 4 / 2
+    }
   }
 
   .main-header-item {
@@ -152,20 +170,25 @@
     background-clip: border-box;
     cursor: pointer;
     z-index: 30;
-    @apply relative p-2 md:p-4 lg:p-7 w-full max-h-32
+    @apply relative p-3 md:p-4 lg:p-7 w-full max-h-32
           flex flex-col gap-0 items-center justify-end
+          order-2
           transition-all;
   }
   
   .main-header-item.--current {
     border-color: transparent;
     z-index: 1;
-    @apply h-full max-h-full gap-4;
+    @apply h-full max-h-full gap-4 order-1 md:order-2;
   }
 
   .main-header-item-title {
-    @apply font-display text-white text-sm sm:text-lg lg:text-[20px] text-center font-[500]
+    @apply font-display text-white text-base lg:text-[20px] text-center font-[500]
   }
+
+  /* .--current .main-header-item-title  {
+    @apply text-2xl sm:text-lg lg:text-[20px]
+  } */
 
   .main-header-item-desc {
     @apply font-body text-white font-[400] text-[14px] text-center
