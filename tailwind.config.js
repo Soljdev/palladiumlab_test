@@ -15,6 +15,11 @@ module.exports = {
           letterSpacing: '-0.01em',
           fontWeight: '800',
         }],
+        'heading-2': ['32px', {
+          lineHeight: '40px',
+          letterSpacing: '-0.01em',
+          fontWeight: '800',
+        }],
       }, 
       colors: {
         'main-red': 'rgba(235, 87, 87, 1)',
@@ -22,7 +27,7 @@ module.exports = {
         'main-blue': 'rgba(47, 128, 237, 1)',
         'main-purple': 'rgba(155, 81, 224, 1)',
 
-      },
+      },  
     },
   },
   plugins: [require('@tailwindcss/typography')],

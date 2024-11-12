@@ -92,4 +92,38 @@ export const globalState = reactive({
       url: '#',
     },
   ],
+  tailNavs: [
+    {
+      title: 'Новостройка',
+      img: './public/img/t1.jpeg',
+    },
+    {
+      title: 'Новостройка',
+      img: './public/img/t2.jpeg',
+    },
+    {
+      title: 'Вторичка',
+      img: './public/img/t3.jpeg',
+    },
+    {
+      title: 'Вторичка',
+      img: './public/img/t4.jpeg',
+    },
+    {
+      title: 'Новостройка',
+      img: './public/img/t7.jpeg',
+    },
+    {
+      title: 'Вторичка',
+      img: './public/img/t5.jpeg',
+    },
+    {
+      title: 'Вторичка',
+      img: './public/img/t6.jpeg',
+    },
+    {
+      title: 'Новостройка',
+      img: './public/img/t8.jpeg',
+    },
+  ],
 })

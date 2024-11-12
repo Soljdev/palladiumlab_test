@@ -47,6 +47,27 @@
         @apply text-heading-1 text-center font-display
     }
 
+    .heading-2 {
+        @apply text-heading-2 font-display relative
+    }
+    .heading-2:after {
+        content: '';
+        position: absolute;
+        width: 40px;
+        height: 1px;
+        top: 50%;
+        left: 0;
+        transform: translate(-250%, -50%);
+        gap: 0px;
+        background: #222;
+    }
+
+    .heading-1 span,
+    .heading-2 span {
+        color: transparent;
+        -webkit-text-stroke: 1px var(--primary-color, #222);
+    }
+
     .btn {
         display: inline-block;
         position: relative;
