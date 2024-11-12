@@ -20,6 +20,11 @@ module.exports = {
           // letterSpacing: '-0.01em',
           fontWeight: '800',
         }],
+        'heading-3': ['24px', {
+          lineHeight: '36px',
+          // letterSpacing: '-0.01em',
+          fontWeight: '600',
+        }],
       }, 
       colors: {
         'main-red': 'rgba(235, 87, 87, 1)',

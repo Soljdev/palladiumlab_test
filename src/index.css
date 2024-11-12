@@ -29,6 +29,15 @@
       src: url(../public/fonts/Gilroy/Gilroy-ExtraBold.woff) format('woff');
     }
 
+    body {
+        --header-height: 52px;
+    }
+    @media (screen(md)) {
+        body {
+            --header-height: 86px;
+        } 
+    }
+
     body::-webkit-scrollbar {
      height: 0px;
      width: 2px;
@@ -71,6 +80,11 @@
     .heading-2 {
         @apply text-heading-2 font-display relative
     }
+
+    .heading-3 {
+        @apply text-heading-3 font-display relative
+    }
+
     .heading-2:after {
         content: '';
         position: absolute;
@@ -84,7 +98,8 @@
     }
 
     .heading-1 span,
-    .heading-2 span {
+    .heading-2 span,
+    .heading-3   span {
         color: transparent;
         -webkit-text-stroke: 1px var(--primary-color, #222);
     }

@@ -25,7 +25,7 @@
 
     <section class="max-w-[1130px] px-4 mx-auto">
       <h2 class="section-header heading-2">Связаться <span>с нами</span></h2>
-      <div class="section-container flex items-start gap-6">
+      <div class="section-container flex flex-col-reverse md:flex-row items-start gap-6">
         <div class="contacts-container">
           <div 
             v-for="(item, index) in store.contacts" 
