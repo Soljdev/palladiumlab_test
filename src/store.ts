@@ -8,10 +8,6 @@ export const globalState = reactive({
         title: 'Офис',
         value: 'Москва, ул. Уличная, д. 1, оф. 1',
       },
-      worktime: { 
-        title: 'Режим работы',
-        value: 'Пн-Вт: 10<sup>00</sup> - 19<sup>00</sup>; Сб-Вс: 10<sup>00</sup> - 15<sup>00</sup>',
-      },
       email: {
         title: 'E-mail',
         value: 'company@company.ru',
@@ -38,7 +34,7 @@ export const globalState = reactive({
       url: '#',
       colors: 'bg-main-red',
       show: false,
-      img: './public/img/s1.jpeg',
+      img: '/img/s1.jpeg',
     },
     {
       id: 2,
@@ -47,7 +43,7 @@ export const globalState = reactive({
       url: '#',
       colors: 'bg-main-green',
       show: false,
-      img: './public/img/s2.jpeg',
+      img: '/img/s2.jpeg',
     },
     {
       id: 3,
@@ -56,7 +52,7 @@ export const globalState = reactive({
       url: '#',
       colors: 'bg-main-blue',
       show: false,
-      img: './public/img/s3.jpeg',
+      img: '/img/s3.jpeg',
     },
     {
       id: 4,
@@ -65,7 +61,7 @@ export const globalState = reactive({
       url: '#',
       colors: 'bg-main-purple',
       show: false,
-      img: './public/img/s4.jpeg',
+      img: '/img/s4.jpeg',
     },
   ],
   navs: [
@@ -97,35 +93,35 @@ export const globalState = reactive({
   tailNavs: [
     {
       title: 'Новостройка',
-      img: './public/img/t1.jpeg',
+      img: '/img/t1.jpeg',
     },
     {
       title: 'Новостройка',
-      img: './public/img/t2.jpeg',
+      img: '/img/t2.jpeg',
     },
     {
       title: 'Вторичка',
-      img: './public/img/t3.jpeg',
+      img: '/img/t3.jpeg',
     },
     {
       title: 'Вторичка',
-      img: './public/img/t4.jpeg',
+      img: '/img/t4.jpeg',
     },
     {
       title: 'Новостройка',
-      img: './public/img/t7.jpeg',
+      img: '/img/t7.jpeg',
     },
     {
       title: 'Вторичка',
-      img: './public/img/t5.jpeg',
+      img: '/img/t5.jpeg',
     },
     {
       title: 'Вторичка',
-      img: './public/img/t6.jpeg',
+      img: '/img/t6.jpeg',
     },
     {
       title: 'Новостройка',
-      img: './public/img/t8.jpeg',
+      img: '/img/t8.jpeg',
     },
   ],
 })
