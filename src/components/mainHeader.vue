@@ -186,10 +186,6 @@
     @apply font-display text-white text-base lg:text-[20px] text-center font-[500]
   }
 
-  /* .--current .main-header-item-title  {
-    @apply text-2xl sm:text-lg lg:text-[20px]
-  } */
-
   .main-header-item-desc {
     @apply font-body text-white font-[400] text-[14px] text-center
            flex flex-col items-center gap-4 max-h-0 overflow-hidden

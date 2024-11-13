@@ -33,9 +33,9 @@
         --header-height: 52px;
     }
     @media (screen(md)) {
-        body {
-            --header-height: 86px;
-        } 
+      body {
+        --header-height: 86px;
+      } 
     }
 
     body::-webkit-scrollbar {
